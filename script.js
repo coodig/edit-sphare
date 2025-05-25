@@ -133,3 +133,51 @@ document.getElementById('btn-cancel-crop').addEventListener('click', function ()
   document.getElementById('btn-apply-crop').classList.add('hidden');
   document.getElementById('btn-cancel-crop').classList.add('hidden');
 });
+
+
+
+// function applyBrightness(value) {
+//   const canvasEl = document.getElementById('canvas');
+
+//   // Reset filters and reapply brightness
+//   Caman(canvasEl, function () {
+//     this.revert(false); // Reset previous edits but keep image
+//     this.brightness(value).render();
+//   });
+// }
+
+function applyBrightness(value) {
+  const obj = fabricCanvas.getObjects('image')[0]; // assuming first object is image
+  if (!obj) return;
+
+  const brightnessFilter = new fabric.Image.filters.Brightness({
+    brightness: value / 100 // fabric expects value between -1 and 1
+  });
+
+  obj.filters = [brightnessFilter]; // You can add more filters in this array
+  obj.applyFilters();
+  fabricCanvas.renderAll();
+
+  saveState(); // Save after applying filter
+}
+
+function resetBrightness() {
+  const obj = fabricCanvas.getObjects('image')[0];
+  if (!obj) return;
+
+  obj.filters = [];
+  obj.applyFilters();
+  fabricCanvas.renderAll();
+  saveState();
+}
+
+
+document.getElementById('brightnessRange').addEventListener('input', function () {
+  applyBrightness(parseInt(this.value));
+});
+
+// document.getElementById('brightnessRange').addEventListener('input', function () {
+//   applyBrightness(parseInt(this.value));
+// });
+
+document.getElementById('btn-reset-brightness').addEventListener('click', resetBrightness);

@@ -41,8 +41,7 @@
       <button
         id="btn-crop"
         class="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition"
-      >
-        Crop
+        >crop
       </button>
 
       <button
@@ -72,6 +71,18 @@
           class="w-32"
         />
       </div> -->
+
+      <label for="brightnessRange">Brightness</label>
+<input type="range" id="brightnessRange" min="-100" max="100" value="0">
+
+<!-- <button
+        id="btn-cancel-brightness"
+        class="bg-red-600 text-white px-4 py-2 rounded shadow hover:bg-red-700 transition hidden"
+      >
+        Cancel brightness
+      </button> -->
+
+      <button id="btn-reset-brightness">Reset Brightness</button>
 
       <!-- <div class="flex items-center space-x-2">
         <label for="contrast" class="text-gray-700 font-medium">Contrast</label>
@@ -135,6 +146,7 @@
 
   <script src="fabric.js"></script>
   <script src="cropper.js"></script>
+  <!-- <script src="caman.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
