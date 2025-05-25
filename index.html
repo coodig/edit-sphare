@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EditSphare</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <h1>EditSphare</h1>
+  <div class="container mx-auto">
+    <h1 class="text-2xl font-bold mb-4">Image Editor</h1>
+    <div
+      id="toolbar"
+      class="mb-4 flex flex-wrap gap-3 items-center"
+    >
+      <label
+        class="cursor-pointer bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition"
+      >
+        Upload Image
+        <input type="file" id="upload-image" accept="image/*" class="hidden" />
+      </label>
+
+      <button
+        id="btn-crop"
+        class="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition"
+      >
+        Crop
+      </button>
+
+      <button
+        id="btn-apply-crop"
+        class="bg-green-800 text-white px-4 py-2 rounded shadow hover:bg-green-900 transition hidden"
+      >
+        Apply Crop
+      </button>
+
+      <button
+        id="btn-cancel-crop"
+        class="bg-red-600 text-white px-4 py-2 rounded shadow hover:bg-red-700 transition hidden"
+      >
+        Cancel Crop
+      </button>
+
+      <!-- <div class="flex items-center space-x-2">
+        <label for="brightness" class="text-gray-700 font-medium"
+          >Brightness</label
+        >
+        <input
+          type="range"
+          id="brightness"
+          min="-100"
+          max="100"
+          value="0"
+          class="w-32"
+        />
+      </div> -->
+
+      <!-- <div class="flex items-center space-x-2">
+        <label for="contrast" class="text-gray-700 font-medium">Contrast</label>
+        <input
+          type="range"
+          id="contrast"
+          min="-100"
+          max="100"
+          value="0"
+          class="w-32"
+        />
+      </div> -->
+
+      <!-- <button
+        id="btn-color-picker"
+        class="bg-purple-600 text-white px-4 py-2 rounded shadow hover:bg-purple-700 transition"
+      >
+        Color Picker
+      </button> -->
+
+      <!-- <button
+        id="btn-add-text"
+        class="bg-yellow-500 text-white px-4 py-2 rounded shadow hover:bg-yellow-600 transition"
+      >
+        Add Text
+      </button> -->
+
+      <!-- <button
+        id="btn-undo"
+        class="bg-gray-600 text-white px-4 py-2 rounded shadow hover:bg-gray-700 transition"
+      >
+        Undo
+      </button> -->
+
+      <!-- <button
+        id="btn-redo"
+        class="bg-gray-600 text-white px-4 py-2 rounded shadow hover:bg-gray-700 transition"
+      >
+        Redo
+      </button> -->
+
+      <button
+        id="btn-save"
+        class="bg-blue-800 text-white px-4 py-2 rounded shadow hover:bg-blue-900 transition ml-auto"
+      >
+        Save Image
+      </button>
+    </div>
+
+    <canvas
+      id="canvas"
+      width="800"
+      height="600"
+      class="border"
+    ></canvas>
+
+   
+    <img id="crop-image" style="display: none; max-width: 100%;" />
+
+  </div>
+
+  <script src="fabric.js"></script>
+  <script src="cropper.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
